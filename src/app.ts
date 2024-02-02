@@ -34,4 +34,3 @@ server.post('/ave', (req, res) => {
 server.listen(port, () => {
     console.log(`Servidor está escutando no endereço http://localhost:${port}`);
 })
-
