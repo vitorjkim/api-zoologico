@@ -25,31 +25,12 @@ server.get('/testeMamifero', (req, res) => {
     res.json(mamifero);
 })
 
+server.post('/ave', (req, res) => {
+    const { nome, idade, genero, envergadura } = req.body;
+    let ave: Ave = new Ave( nome, idade, genero, envergadura);
+    res.json(["A nova ave do zoologico é: ", ave]);
+});
+
 server.listen(port, () => {
     console.log(`Servidor está escutando no endereço http://localhost:${port}`);
 })
-
-server.post('/cadastro', (req, res) => {
-    try {
-        const { nome, idade, genero, envergadura } = req.body;
-        const ave = new Ave(nome, idade, genero, envergadura);
-
-        console.log('Ave cadastrada:', ave);
-        persistirAve(ave);
-
-        res.json({ mensagem: "Ave cadastrada com sucesso", ave });
-    } catch (error) {
-        console.error('Erro ao cadastrar ave:', error);
-        res.status(500).json({ mensagem: "Erro ao cadastrar ave" });
-    }
-});
-
-let bancoDadosAve: Ave[] = [];
-function persistirAve(ave: Ave) {
-    try {
-        bancoDadosAve.push(ave);
-        console.log(`Ave persistida:`, ave);
-    } catch (error) {
-        console.error(`Erro ao persistir os dados\n ${error}`);
-    }
-}
