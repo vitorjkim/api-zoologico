@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { Ave } from './model/Ave';
 import { Mamifero } from './model/Mamifero';
-import { Repitil } from './model/Repitil';
+import { Repitil} from './model/Repitil';
 
 const server = express();
 const port = 3000;
