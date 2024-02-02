@@ -15,9 +15,9 @@ server.get('/testeAve', (req, res) => {
     res.json(ave);
 })
 
-server.get('/testeRepitil', (req, res) => {
-    let repitil: Repitil = new Repitil('Roberto', 2024, 'Feminino', 'ganoide');
-    res.json(repitil);
+    server.get('/testeRepitil', (req, res) => {
+        let repitil: Repitil = new Repitil('Roberto', 2024, 'Feminino', 'ganoide');
+        res.json(repitil);
 })
 
 server.get('/testeMamifero', (req, res) => {
@@ -28,3 +28,28 @@ server.get('/testeMamifero', (req, res) => {
 server.listen(port, () => {
     console.log(`Servidor está escutando no endereço http://localhost:${port}`);
 })
+
+server.post('/cadastro', (req, res) => {
+    try {
+        const { nome, idade, genero, envergadura } = req.body;
+        const ave = new Ave(nome, idade, genero, envergadura);
+
+        console.log('Ave cadastrada:', ave);
+        persistirAve(ave);
+
+        res.json({ mensagem: "Ave cadastrada com sucesso", ave });
+    } catch (error) {
+        console.error('Erro ao cadastrar ave:', error);
+        res.status(500).json({ mensagem: "Erro ao cadastrar ave" });
+    }
+});
+
+let bancoDadosAve: Ave[] = [];
+function persistirAve(ave: Ave) {
+    try {
+        bancoDadosAve.push(ave);
+        console.log(`Ave persistida:`, ave);
+    } catch (error) {
+        console.error(`Erro ao persistir os dados\n ${error}`);
+    }
+}
