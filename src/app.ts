@@ -29,7 +29,6 @@ server.listen(port, () => {
     console.log(`Servidor está escutando no endereço http://localhost:${port}`);
 })
 
-
 server.post('/cadastro', (req, res) => {
     try {
         const { nome, idade, genero, envergadura } = req.body;
