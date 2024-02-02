@@ -15,9 +15,9 @@ server.get('/testeAve', (req, res) => {
     res.json(ave);
 })
 
-    server.get('/testeRepitil', (req, res) => {
-        let repitil: Repitil = new Repitil('Roberto', 2024, 'Feminino', 'ganoide');
-        res.json(repitil);
+server.get('/testeRepitil', (req, res) => {
+    let repitil: Repitil = new Repitil('Roberto', 2024, 'Feminino', 'ganoide');
+    res.json(repitil);
 })
 
 server.get('/testeMamifero', (req, res) => {
@@ -28,6 +28,7 @@ server.get('/testeMamifero', (req, res) => {
 server.listen(port, () => {
     console.log(`Servidor está escutando no endereço http://localhost:${port}`);
 })
+
 
 server.post('/cadastro', (req, res) => {
     try {
