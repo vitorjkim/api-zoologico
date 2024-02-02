@@ -1,19 +1,21 @@
-class Ave extends Animal {
-    private evergadura: string;
+import { Animal } from "./Animal";
 
-    constructor(_evergadura: string,
-                _nome: string,
+export class Ave extends Animal {
+    private envergadura: number;
+
+    constructor(_nome: string,
                 _idade: number,
-                _genero: string) {
+                _genero: string, 
+                _envergadura: number) {
         super(_nome, _idade, _genero);
-        this.evergadura = _evergadura;
+        this.envergadura = _envergadura;
         }
 
-        public getEvergadura(): string {
-            return this.evergadura;
+        public getEnvergadura(): number {
+            return this.envergadura;
         }
         
-        public setEvergadura(_evergadura: string): void {
-            this.evergadura = _evergadura;
+        public setEnvergadura(_envergadura: number): void {
+            this.envergadura = _envergadura;
         }
 }
