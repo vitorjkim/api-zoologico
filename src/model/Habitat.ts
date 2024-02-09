@@ -1,10 +1,26 @@
 import { Animal } from "./Animal";
 
-export class Habitat{
+/**
+ * Classe Habitat representa um habitat dentro de um zoológico, composta por um nome e uma lista de animais.
+ */
+export class Habitat {
 
+    /**
+     * Nome do habitat.
+     */
     private nome: string;
+
+    /**
+     * Lista de animais presentes no habitat.
+     */
     private lista_de_animais: Array<Animal>;
     
+    /**
+     * Construtor da classe Habitat.
+     * 
+     * @param _nome O nome do habitat.
+     * @param _lista_de_animais A lista de animais presentes no habitat.
+     */
     constructor(_nome: string,
                 _lista_de_animais: Array<Animal>) {
         this.nome = _nome;
