@@ -1,6 +1,6 @@
 import { Animal } from "./Animal";
 
-export class Repitil extends Animal {
+export class Reptil extends Animal {
     private tipo_de_escamas: string;
 
     constructor(_nome: string,
