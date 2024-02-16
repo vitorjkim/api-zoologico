@@ -6,7 +6,7 @@ import { Animal } from "./Animal";
 export class Habitat {
 
     /**
-     * Nome do habitat.
+     * Representa o nome do habitat.
      */
     private nome: string;
 

@@ -6,7 +6,7 @@ import { Animal } from "./Animal";
 export class Mamifero extends Animal {
     
     /**
-     * Raça do mamífero.
+     * Representa a raça do mamífero.
      */
     private raca: string;
 

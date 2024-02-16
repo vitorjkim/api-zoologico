@@ -6,7 +6,7 @@ import { Animal } from "./Animal";
 export class Reptil extends Animal {
     
     /**
-     * Tipo de escamas do réptil.
+     * Representa o tipo de escamas do réptil.
      */
     private tipo_de_escamas: string;
 

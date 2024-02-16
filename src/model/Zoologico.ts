@@ -6,7 +6,7 @@ import { Atracao } from "./Atracao";
 export class Zoologico {
     
     /**
-     * Nome do zoológico.
+     * Representa o nome do zoológico.
      */
     private nome: string;
 

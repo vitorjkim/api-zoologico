@@ -6,7 +6,7 @@ import { Animal } from "./Animal";
 export class Ave extends Animal {
     
     /**
-     * Envergadura da ave.
+     * Representa a envergadura da ave.
      */
     private envergadura: number;
 
