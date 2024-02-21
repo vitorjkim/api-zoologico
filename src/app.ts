@@ -6,6 +6,7 @@ import { Reptil} from './model/Reptil';
 import { Habitat } from './model/Habitat';
 import { Atracao } from './model/Atracao';
 import { Zoologico } from './model/Zoologico';
+import { DatabaseModel } from './model/DatabaseModel';
 
 const server = express();
 const port = 3000;
@@ -47,6 +48,17 @@ server.post('/zoologico', (req, res) => {
     const zoologico = new Zoologico(nome, atracao);
     console.log(zoologico);
     res.status(200).json('Zoologico criada')
+})
+
+new DatabaseModel().testeConexao().then((resbd) => {
+    if(resbd) {
+        server.listen(port, () => {
+            console.log(`Server rodando em http://localhost:${port}`)
+        })
+    } else{
+        console.log('Não foi possivel conectar ao banco de dados');
+
+    }
 })
 
 server.listen(port, () => {
