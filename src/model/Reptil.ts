@@ -1,4 +1,7 @@
 import { Animal } from "./Animal";
+import { DatabaseModel } from "./DatabaseModel";
+
+const database = new DatabaseModel().pool;
 
 /**
  * Classe Reptil representa um réptil dentro de um zoológico, extendendo a classe Animal e adicionando uma propriedade de tipo de escamas.
@@ -44,5 +47,24 @@ export class Reptil extends Animal {
      */
     public setTipo_de_escamas(_tipo_de_escamas: string): void {
         this.tipo_de_escamas = _tipo_de_escamas;
+    }
+
+    static async listarRepteis() {
+        const listaDeRepteis: Array<Reptil> = [];
+        try {
+            const queryReturn = await database.query(`SELECT * FROM  reptil`);
+            queryReturn.rows.forEach(reptil => {
+                listaDeRepteis.push(reptil);
+            });
+
+            // só pra testar se a lista veio certa do banco
+            console.log(listaDeRepteis);
+
+            return listaDeRepteis;
+        } catch (error) {
+            console.log('Erro no modelo');
+            console.log(error);
+            return "error";
+        }
     }
 }

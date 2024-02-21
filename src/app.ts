@@ -50,17 +50,18 @@ server.post('/zoologico', (req, res) => {
     res.status(200).json('Zoologico criada')
 })
 
+server.get('/reptil', async (req, res) => {
+    const repteis = await Reptil.listarRepteis();
+
+    res.status(200).json(repteis);
+})
+
 new DatabaseModel().testeConexao().then((resbd) => {
     if(resbd) {
         server.listen(port, () => {
-            console.log(`Server rodando em http://localhost:${port}`)
+            console.log(`Servidor rodando em http://localhost:${port}`);
         })
-    } else{
-        console.log('Não foi possivel conectar ao banco de dados');
-
+    } else {
+        console.log('Não foi possível conectar ao banco de dados');
     }
-})
-
-server.listen(port, () => {
-    console.log(`Servidor está escutando no endereço http://localhost:${port}`);
 })
