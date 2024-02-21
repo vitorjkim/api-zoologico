@@ -52,7 +52,7 @@ export class Reptil extends Animal {
     static async listarRepteis() {
         const listaDeRepteis: Array<Reptil> = [];
         try {
-            const queryReturn = await database.query(`SELECT * FROM  reptil`);
+            const queryReturn = await database.query(`SELECT * FROM reptil WHERE tipo_de_escamas = 'Escudos'`);
             queryReturn.rows.forEach(reptil => {
                 listaDeRepteis.push(reptil);
             });
