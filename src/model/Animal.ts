@@ -1,25 +1,25 @@
 /**
- * Classe Animal representa um animal dentro de um zoológico, composta por um nome, idade e gênero.
+ * Representa um animal no zoológico.
  */
 export class Animal {
 
     /**
-     * Representa o nome do animal.
+     * O nome do animal.
      */
     private nome: string;
 
     /**
-     * Representa a idade do animal.
+     * A idade do animal.
      */
     private idade: number;
 
     /**
-     * Representa o gênero do animal.
+     * O gênero do animal (ex: "macho", "fêmea", "desconhecido").
      */
     private genero: string;
-    
+
     /**
-     * Construtor da classe Animal.
+     * Cria uma nova instância de Animal.
      * 
      * @param _nome O nome do animal.
      * @param _idade A idade do animal.
@@ -41,16 +41,16 @@ export class Animal {
     public getNome(): string {
         return this.nome;
     }
-    
+
     /**
      * Define o nome do animal.
      * 
-     * @param _nome O novo nome do animal.
+     * @param nome O nome a ser atribuído ao animal.
      */
-    public setNome(_nome: string): void {
-        this.nome = _nome;
+    public setNome(nome: string): void {
+        this.nome = nome;
     }
-    
+
     /**
      * Obtém a idade do animal.
      * 
@@ -59,16 +59,16 @@ export class Animal {
     public getIdade(): number {
         return this.idade;
     }
-    
+
     /**
      * Define a idade do animal.
      * 
-     * @param _idade A nova idade do animal.
+     * @param idade A idade a ser atribuída ao animal.
      */
-    public setIdade(_idade: number): void {
-        this.idade = _idade;
+    public setIdade(idade: number): void {
+        this.idade = idade;
     }
-    
+
     /**
      * Obtém o gênero do animal.
      * 
@@ -77,13 +77,13 @@ export class Animal {
     public getGenero(): string {
         return this.genero;
     }
-    
+
     /**
      * Define o gênero do animal.
      * 
-     * @param _genero O novo gênero do animal.
+     * @param genero O gênero a ser atribuído ao animal.
      */
-    public setGenero(_genero: string): void {
-        this.genero = _genero;
+    public setGenero(genero: string): void {
+        this.genero = genero;
     }
 }
